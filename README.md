@@ -85,6 +85,9 @@ from utils import evaluate_tagger_on_dataset
 f0, report0 = evaluate_tagger_on_dataset(tagger_0, tag_dictionary, gt_dict, images, filenames)
 print(f0)
 ```
+```markdown
+0.5113272419154772
+```
 
 
 
