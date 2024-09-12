@@ -235,8 +235,21 @@ pprint.pp(report1)
 ```
 The improvement from 51.1% to 67% is significant. Of course, there still remain many problems, some of them due to the deficiencies of the local algorithm and some of them due to the inherent limitations of the CLIP embeddings.
 
+Let's view two more examples which show improvement from global to local (there are opposite examples, too, of course, but the statistics in the report indicate that the former are more numerous).
 
+```python
+k = 0
 
+res_k = tagger_0(images[k])
+gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
+display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Global") 
+
+res_k = tagger_1(images[k])
+gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
+display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Local") 
+```
+![Tag0G](assets/tag_global_0.jpg)
+![Tag0L](assets/tag_local_0.jpg)
 
 
 
