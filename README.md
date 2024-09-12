@@ -176,6 +176,20 @@ We then tag the image with the label if and only if:
 
 Additionally, we require that the softmax of the vector **[L+, L-, G]** is above a parameter threshold to ensure confidence in the results.
 
+## Results
+
+Now let us run the full report for the local tagger.
+
+```python
+tagger_1 = CLIPTagger(tag_dictionary)
+tagger_1.set_local_logit_prob_th(0.4)
+
+f1, report1 = evaluate_tagger_on_dataset(tagger_1, tag_dictionary, gt_dict, images, filenames)
+print(f1)
+```
+```markdown
+0.6706632174635662
+```
 
 
 
