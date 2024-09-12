@@ -1,5 +1,9 @@
 # ClipTagger
-Toy Version of a CLIP-based image tagger. There are two taggers implemented: the "global" one, a simpler one and a "local", more sophisticated one.
+There are two tagging algorithms implemented: 
+1. "Global tagger" - a simpler algorithm as a baseline
+2. "Local tagger" - a more sophisticated algorithm for better results.
+
+Unfortunately, I ended up implementing each in a separate class, which is not very optimal since they should have been either two methods in the same class or two classes inheriting from a base class. 
 
 In order to evaluate the taggers I first created a small database with ground-truth tags. It consists of 78 images which I manually tagged using the following tag dictionary:
 
