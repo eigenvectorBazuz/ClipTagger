@@ -88,7 +88,51 @@ print(f0)
 ```markdown
 0.5113272419154772
 ```
+This means that the Weighted F1 score of the global tagger is 51.1% (I chose weiighted because there is quite a bit of class imbalance in the dataset). Now let's see the full report as well:
 
+```python
+pprint.pp(report0)
+```
+```markdown
+('              precision    recall  f1-score   support\n'
+ '\n'
+ '         cat       0.90      0.90      0.90        10\n'
+ '         dog       1.00      1.00      1.00         2\n'
+ '    dynosaur       0.67      1.00      0.80         2\n'
+ '       tiger       0.50      1.00      0.67         3\n'
+ '        bear       1.00      1.00      1.00         3\n'
+ '       horse       1.00      1.00      1.00         5\n'
+ '         car       1.00      0.40      0.57         5\n'
+ '        ship       0.75      1.00      0.86         3\n'
+ '       dalek       0.71      1.00      0.83         5\n'
+ '      tardis       0.75      1.00      0.86         3\n'
+ '       robot       0.75      1.00      0.86         6\n'
+ '         man       1.00      0.06      0.12        16\n'
+ '       woman       1.00      0.18      0.30        17\n'
+ '       child       0.00      0.00      0.00         2\n'
+ '      indoor       1.00      0.33      0.50        21\n'
+ '     outdoor       0.75      0.09      0.15        35\n'
+ '       pizza       0.50      1.00      0.67         2\n'
+ '     pancake       1.00      1.00      1.00         3\n'
+ '         tea       1.00      0.25      0.40         4\n'
+ '      cheese       1.00      0.67      0.80         3\n'
+ '         oil       0.50      1.00      0.67         1\n'
+ '        rome       0.62      0.83      0.71         6\n'
+ '       india       0.50      1.00      0.67         1\n'
+ '      israel       0.00      0.00      0.00         1\n'
+ '       chess       1.00      1.00      1.00         7\n'
+ '    baseball       1.00      0.50      0.67         2\n'
+ '    umbrella       0.50      0.33      0.40         3\n'
+ '      camera       0.25      1.00      0.40         1\n'
+ '       clock       1.00      1.00      1.00         1\n'
+ '      papers       0.67      1.00      0.80         2\n'
+ '        book       0.80      0.40      0.53        10\n'
+ '\n'
+ '   micro avg       0.77      0.48      0.59       185\n'
+ '   macro avg       0.75      0.71      0.65       185\n'
+ 'weighted avg       0.85      0.48      0.51       185\n'
+ ' samples avg       0.86      0.55      0.62       185\n')
+```
 
 
 
