@@ -28,4 +28,6 @@ All in all there are 185 tag assignments, that is 2.37 tags on average per image
 
 # "Global" Tagger - the simple one
 
-This was meant to be a trivial throwaway baseline method but it ended up performing suprisingly well on the dataset so I kept it around. The idea is simple: concatenate all the labels into one large list (hence the name "globa") and use them as text strings to embed by CLIP. Then each image embedding is compared to them, the raw logits are normalized by softmax and all those labels passing a fixed threshol, e.g. 0.2, are returned. This allows for the presence of labels from the same class and also to not tag at all an attribute that is not present, since in the latter case all the attribute's labels will receive low scores. In case an image is completey unrelated to the given labels, all bets are off. 
+This was meant to be a trivial throwaway baseline method but it ended up performing suprisingly well on the dataset so I kept it around. 
+
+The idea is simple: concatenate all the labels into one large list (hence the name "globa") and use them as text strings to embed by CLIP. Then each image embedding is compared to them, the raw logits are normalized by softmax and all those labels passing a fixed threshol, e.g. 0.2, are returned. This allows for the presence of labels from the same class and also to not tag at all an attribute that is not present, since in the latter case all the attribute's labels will receive low scores. In case an image is completey unrelated to the given labels, all bets are off. 
