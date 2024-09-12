@@ -15,3 +15,5 @@ Tags Dictionary:
  'games': ['chess', 'baseball'],
  'object': ['umbrella', 'camera', 'clock', 'papers', 'book']}
 
+Here are a few examples of images from the dataset and their tags:
+![Example images](assets/images_example.jpg)
