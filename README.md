@@ -162,7 +162,23 @@ Two more additional tricks were used in this method. First, I also added the _ne
 
 So now for each label (e.g. 'cat' or 'dog') we have 4 different strings (2 positive and 2 negative) and each category has a category-level negative strings. So if the global tagger worked with 31 strings (= the total number of labels), the local tagger works with 133 strings (= 4*31 + 9 category-level strings). Since this is all done at init time and matrix products are cheap for these sizes, the overhead is negligible.
 
-After the logits are computed, for each label we define $L_{+}$ as the maximum logit value of its positive templates and $L_{-}$ as the maximum value of its negative templates and $G$ as the logit value of the corresponding category-level negative template.
+## Formula Explanation
+
+After the logits are computed, for each label we define:
+
+- **L+** as the maximum logit value of its positive templates.
+- **L-** as the maximum logit value of its negative templates.
+- **G** as the logit value of the corresponding category-level negative template.
+
+We then tag the image with the label if and only if:
+
+**L+ > max(L-, G)**
+
+Additionally, we require that the softmax of the vector **[L+, L-, G]** is above a parameter threshold to ensure confidence in the results.
+
+
+
+
 
 
 
