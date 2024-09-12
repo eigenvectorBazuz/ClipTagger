@@ -190,6 +190,50 @@ print(f1)
 ```markdown
 0.6706632174635662
 ```
+```python
+pprint.pp(report1)
+```
+```markdown
+('              precision    recall  f1-score   support\n'
+ '\n'
+ '         cat       0.91      1.00      0.95        10\n'
+ '         dog       0.67      1.00      0.80         2\n'
+ '    dynosaur       1.00      1.00      1.00         2\n'
+ '       tiger       1.00      0.67      0.80         3\n'
+ '        bear       1.00      0.67      0.80         3\n'
+ '       horse       0.80      0.80      0.80         5\n'
+ '         car       0.50      0.20      0.29         5\n'
+ '        ship       0.50      1.00      0.67         3\n'
+ '       dalek       1.00      1.00      1.00         5\n'
+ '      tardis       0.25      0.67      0.36         3\n'
+ '       robot       0.55      1.00      0.71         6\n'
+ '         man       0.47      0.50      0.48        16\n'
+ '       woman       0.71      0.88      0.79        17\n'
+ '       child       0.22      1.00      0.36         2\n'
+ '      indoor       0.79      0.71      0.75        21\n'
+ '     outdoor       0.67      0.83      0.74        35\n'
+ '       pizza       0.67      1.00      0.80         2\n'
+ '     pancake       1.00      1.00      1.00         3\n'
+ '         tea       0.25      0.50      0.33         4\n'
+ '      cheese       0.40      0.67      0.50         3\n'
+ '         oil       0.00      0.00      0.00         1\n'
+ '        rome       0.30      1.00      0.46         6\n'
+ '       india       0.00      0.00      0.00         1\n'
+ '      israel       0.00      0.00      0.00         1\n'
+ '       chess       0.43      0.86      0.57         7\n'
+ '    baseball       1.00      0.50      0.67         2\n'
+ '    umbrella       0.00      0.00      0.00         3\n'
+ '      camera       1.00      1.00      1.00         1\n'
+ '       clock       0.50      1.00      0.67         1\n'
+ '      papers       0.11      1.00      0.19         2\n'
+ '        book       0.38      0.60      0.46        10\n'
+ '\n'
+ '   micro avg       0.51      0.76      0.61       185\n'
+ '   macro avg       0.55      0.71      0.58       185\n'
+ 'weighted avg       0.62      0.76      0.66       185\n'
+ ' samples avg       0.59      0.79      0.62       185\n')
+```
+The improvement from 51.1% to 67% is significant. Of course, there still remain many problems, some of them due to the deficiencies of the local algorithm and some of them due to the inherent limitations of the CLIP embeddings.
 
 
 
