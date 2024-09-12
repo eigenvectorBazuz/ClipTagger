@@ -20,6 +20,6 @@ Here are a few examples of images from the dataset and their tags:
 
 ![Example images](assets/images_example.jpg)
 
-All in all there are 185 tag assignments, that is 2.37 tags on average per image.
+All in all there are 185 tag assignments, that is 2.37 tags on average per image. I will be using [the sklearn classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) for evaluation, focusing on the Weighted F1 and Sample F1 metrics.
 
 # The first tagger - global
