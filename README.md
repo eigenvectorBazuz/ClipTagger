@@ -134,6 +134,35 @@ pprint.pp(report0)
  ' samples avg       0.86      0.55      0.62       185\n')
 ```
 
+# "Local" Tagger - the more advanced one
+This more advanced method handles more proactively the "irrelevant tag" problem. Also I tried to robustify the algorithm by using a set of templates instead of just one string for each class. The original templates examined were:
+```
+"This is an image of a {X}.",
+"Here we see a {X}.",
+"The photo depicts a {X}.",
+"In this picture, there is a {X}.",
+"This picture shows a {X}.",
+"A {X} is present in this image.",
+"You can see a {X} here.",
+"This image represents a {X}.",
+"A {X} is captured in this shot.",
+"The object in this image is a {X}."
+```
+This was supposed to compensate for unknown deformations or problems in CLIP embedding space. In practice the initial results using the full set of templates were very bad! (Using the sklearn report in the way shown above). After some debugging I found out that the best results are obtained by retaining only two of the templates:
+```
+"This is an image of a {X}.",
+"This picture shows a {X}.",
+```
+I did not have the leisure to get to the bottom of this phenomenon, alas. 
+
+Two more additional tricks were used in this method. First, I also added the _negation_ of each template for each label, Instead of hard-coding negations I used the [*negate* library](https://github.com/dmlls/negate). Second, I added a None-type string for each category (e.g. 'animal'):
+```
+"There is no {X} in this image."
+```
+
+So now for each label (e.g. 'cat' or 'dog') we have 4 different strings (2 positive and 2 negative) and each category has a category-level negative strings. So if the global tagger worked with 31 strings (= the total number of labels), the local tagger works with 133 strings (= 4*31 + 9 category-level strings). Since this is all done at init time and matrix products are cheap for these sizes, the overhead is negligible.
+
+After the logits are computed, for each label we define $L_{+}$ as the maximum logit value of its positive templates and $L_{-}$ as the maximum value of its negative templates and $G$ as the logit value of the corresponding category-level negative template.
 
 
 
