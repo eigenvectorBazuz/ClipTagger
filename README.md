@@ -14,6 +14,10 @@ Tags Dictionary:
  'country': ['rome', 'india', 'israel'],
  'games': ['chess', 'baseball'],
  'object': ['umbrella', 'camera', 'clock', 'papers', 'book']}
+```
 
 Here are a few examples of images from the dataset and their tags:
+
 ![Example images](assets/images_example.jpg)
+
+All in all there are 185 tag assignments, that is 2.37 tags on average per image.
