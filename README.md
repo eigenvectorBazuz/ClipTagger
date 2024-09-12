@@ -251,5 +251,19 @@ display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Local"
 ![Tag0G](assets/tag_global_0.jpg)
 ![Tag0L](assets/tag_local_0.jpg)
 
+```python
+k = 49
+
+res_k = tagger_0(images[k])
+gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
+display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Global") 
+
+res_k = tagger_1(images[k])
+gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
+display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Local") 
+```
+![Tag49G](assets/tag_global_49.jpg)
+![Tag49L](assets/tag_local_49.jpg)
+
 
 
