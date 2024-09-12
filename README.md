@@ -78,7 +78,13 @@ display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Global
 ```
 ![Tag12](assets/tag_global_12.jpg)
 
+Now let's run the tagger on all the dataset and produce a report:
+```python
+from utils import evaluate_tagger_on_dataset
 
+f0, report0 = evaluate_tagger_on_dataset(tagger_0, tag_dictionary, gt_dict, images, filenames)
+print(f0)
+```
 
 
 
