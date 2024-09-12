@@ -56,8 +56,21 @@ The idea is simple: concatenate all the labels into one large list (hence the na
 ```python
 tagger_0 = OldTagger(tag_dictionary)
 tagger_0.set_global_logit_prob_th(0.1)
+```
 
+Let's run in on a few images from the dataset and display the results.
+
+```python
+from utils import display_image_with_tags, create_gt_dict_for_file
+
+k = 5
+res_k = tagger_0(images[k])
+gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
+display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Global") 
 
 ```
+
+
+
 
 
