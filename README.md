@@ -265,5 +265,6 @@ display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Local"
 ![Tag49G](assets/tag_global_49.jpg)
 ![Tag49L](assets/tag_local_49.jpg)
 
+# Part 2 - Logits Separation 
 
 
