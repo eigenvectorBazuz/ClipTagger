@@ -75,7 +75,7 @@ res_k = tagger_0(images[k])
 gt_for_image_k = create_gt_dict_for_file(filenames[k], gt_dict, tag_dictionary)
 display_image_with_tags(images[k], res_k, gt_for_image_k, tagging_method="Global") 
 ```
-![Tag5](assets/tag_global_12.jpg)
+![Tag12](assets/tag_global_12.jpg)
 
 
 
